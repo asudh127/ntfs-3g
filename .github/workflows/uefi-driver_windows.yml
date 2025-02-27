@@ -1,6 +1,10 @@
 name: UEFI driver - Windows (MSVC with gnu-efi) build
 
-on: [push, pull_request]
+on:
+  workflow_dispatch: # Putting here is also fine!!
+  release:
+    types: [created]
+
 
 env:
   SOLUTION_FILE_PATH: ./uefi-driver.sln
